@@ -281,6 +281,7 @@ Enables output for one or more modules.
 
 Disables output for one or more modules.
 
+Creates random products (can be used as sample data etc...).
 ### sql-info
 
 Shows Magento's SQL configuration.

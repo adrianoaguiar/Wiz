@@ -24,6 +24,24 @@ fi
 WIZ_DIR="`dirname $WIZ_PATH`";
 WIZ_PHP_VERSION="5.2";
 
+WIZ_REQUIRED_PHP_VERSION="5.2"
+WIZ_FOUND_PHP=0
+
+# In case the Path isn't allready set by the User
+if [ "" == "$WIZ_SCRIPT_PATH" ]; then
+    SOURCE="${BASH_SOURCE[0]}"
+    WIZ_SCRIPT_PATH="$( dirname "$SOURCE" )"
+
+    # If the called File is a Symlink, resolve it
+    while [ -h "$SOURCE" ]; do
+        SOURCE="$(readlink "$SOURCE")"
+        [[ $SOURCE != /* ]] && SOURCE="$WIZ_SCRIPT_PATH/$SOURCE"
+        WIZ_SCRIPT_PATH="$( cd -P "$( dirname "$SOURCE"  )" && pwd )"
+    done
+
+    WIZ_SCRIPT_PATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+fi;
+
 # If no valid PHP executable has been set in WIZ_PHP_PATH, iterate PATH looking for one
 if [ ! -x "$WIZ_PHP_PATH" ] || [ "`$WIZ_PHP_PATH -r "echo (int) version_compare(PHP_VERSION, '$WIZ_PHP_VERSION', '>=');"`" == "0" ]; then
     IFS=:

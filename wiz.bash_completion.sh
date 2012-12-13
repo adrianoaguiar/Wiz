@@ -11,7 +11,7 @@ _wiz() {
     if [ $COMP_CWORD -eq 1 ]; then prev='wiz'; fi
     case "${prev}" in
         wiz)
-            opts="301-urlskumap 301-urlcatmap 301-htgen 301-xmlsm2csv admin-disable admin-enable admin-list admin-resetpass admin-createadmin admin-timeout admin-resources cache-clear cache-enable cache-disable cache-status config-get config-storeget config-xpath config-asxml cron-jobs cron-listeners cron-run devel-showhints devel-logging devel-allowsymlinks devel-config devel-profiler devel-mergejs devel-mergecss devel-listeners devel-models devel-events indexer-status indexer-reindex indexer-realtime indexer-manual log-status log-clean magento-version magento-script magento-shutdown magento-start mc-dl mc-versions module-list module-enable module-disable module-enableoutput module-disableoutput sql-info sql-cli sql-exec store-list command-list help"
+            opts="301-urlskumap 301-urlcatmap 301-htgen 301-xmlsm2csv admin-disable admin-enable admin-list admin-resetpass admin-createadmin admin-timeout admin-resources cache-clear cache-enable cache-disable cache-status config-get config-storeget config-xpath config-asxml cron-jobs cron-listeners cron-run devel-showhints devel-logging devel-allowsymlinks devel-config devel-profiler devel-mergejs devel-mergecss devel-listeners devel-models devel-events indexer-status indexer-reindex indexer-realtime indexer-manual log-status log-clean magento-version magento-script magento-shutdown magento-start mc-dl mc-versions module-list module-enable module-disable module-enableoutput module-disableoutput product-createproduct sql-info product-createproduct sql-cli sql-exec store-list command-list help"
             opts="${opts} --store --website --batch"
             ;;
         magento-script)

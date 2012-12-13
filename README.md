@@ -281,7 +281,10 @@ Enables output for one or more modules.
 
 Disables output for one or more modules.
 
+### product-createproduct &lt;number of products&gt; &lt;type of product&gt; &lt;category&gt;
+
 Creates random products (can be used as sample data etc...).
+
 ### sql-info
 
 Shows Magento's SQL configuration.
